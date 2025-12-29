@@ -37,10 +37,10 @@ jobs:
 
       - name: Prepare deploy folder
         run: |
-          mkdir -p deploy
-          cp index.html axes.html tesseract.html deploy/
-          cp -r dist deploy/
-          cp -r public deploy/
+          mkdir -p deploy/public
+          cp src/*.html deploy/
+          cp -r dist/* deploy/
+          cp -r public/* deploy/public/
 
       - name: Setup Pages
         uses: actions/configure-pages@v4

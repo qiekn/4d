@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Tesseract - 4D Visualization</title>
+    <title>4D Axes</title>
     <style>
       * { margin: 0; padding: 0; box-sizing: border-box; }
       body {
@@ -13,7 +13,7 @@
         justify-content: center;
         align-items: center;
         min-height: 100vh;
-        gap: 30px;
+        gap: 20px;
       }
       canvas {
         background: #0f0f1a;
@@ -44,6 +44,25 @@
         cursor: pointer;
       }
       h2 { margin-bottom: 15px; color: #e94560; font-size: 24px; }
+      .legend {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid #333;
+      }
+      .legend-item {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        font-size: 18px;
+      }
+      .legend-color {
+        width: 30px;
+        height: 5px;
+        border-radius: 2px;
+      }
       .back-link {
         position: fixed;
         top: 20px;
@@ -62,7 +81,7 @@
   </head>
   <body>
     <a href="index.html" class="back-link">← Back</a>
-    <canvas id="game"></canvas>
+    <canvas id="game" width="1200" height="1200" style="width: 800px; height: 800px;"></canvas>
     <div class="controls">
       <h2>4D Rotation</h2>
       <div class="slider-group">
@@ -89,7 +108,25 @@
         <label>ZW Plane <span id="zw-val">0°</span></label>
         <input type="range" id="rot-zw" min="0" max="360" value="0" />
       </div>
+      <div class="legend">
+        <div class="legend-item">
+          <div class="legend-color" style="background: #ff6b6b;"></div>
+          <span>X axis</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-color" style="background: #4ecdc4;"></div>
+          <span>Y axis</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-color" style="background: #ffe66d;"></div>
+          <span>Z axis</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-color" style="background: #c44dff;"></div>
+          <span>W axis</span>
+        </div>
+      </div>
     </div>
-    <script type="module" src="./dist/tesseract.js"></script>
+    <script type="module" src="./axes.js"></script>
   </body>
 </html>
