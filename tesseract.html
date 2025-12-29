@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Tesseract - 4D Visualization</title>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body {
+        font-family: monospace;
+        background: #1a1a2e;
+        color: #eee;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        gap: 30px;
+      }
+      canvas {
+        background: #0f0f1a;
+        border: 1px solid #333;
+      }
+      .controls {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 30px;
+        background: #16213e;
+        border-radius: 12px;
+        min-width: 300px;
+      }
+      .slider-group {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .slider-group label {
+        display: flex;
+        justify-content: space-between;
+        font-size: 18px;
+      }
+      .slider-group input[type="range"] {
+        width: 280px;
+        height: 8px;
+        cursor: pointer;
+      }
+      h2 { margin-bottom: 15px; color: #e94560; font-size: 24px; }
+      .back-link {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        color: #4cc9f0;
+        text-decoration: none;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .back-link:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="index.html" class="back-link">← Back</a>
+    <canvas id="game"></canvas>
+    <div class="controls">
+      <h2>4D Rotation</h2>
+      <div class="slider-group">
+        <label>XY Plane <span id="xy-val">0°</span></label>
+        <input type="range" id="rot-xy" min="0" max="360" value="0" />
+      </div>
+      <div class="slider-group">
+        <label>XZ Plane <span id="xz-val">0°</span></label>
+        <input type="range" id="rot-xz" min="0" max="360" value="0" />
+      </div>
+      <div class="slider-group">
+        <label>XW Plane <span id="xw-val">0°</span></label>
+        <input type="range" id="rot-xw" min="0" max="360" value="0" />
+      </div>
+      <div class="slider-group">
+        <label>YZ Plane <span id="yz-val">0°</span></label>
+        <input type="range" id="rot-yz" min="0" max="360" value="0" />
+      </div>
+      <div class="slider-group">
+        <label>YW Plane <span id="yw-val">0°</span></label>
+        <input type="range" id="rot-yw" min="0" max="360" value="0" />
+      </div>
+      <div class="slider-group">
+        <label>ZW Plane <span id="zw-val">0°</span></label>
+        <input type="range" id="rot-zw" min="0" max="360" value="0" />
+      </div>
+    </div>
+    <script type="module" src="./dist/tesseract.js"></script>
+  </body>
+</html>

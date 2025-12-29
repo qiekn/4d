@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>4D Visualization</title>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body {
+        font-family: monospace;
+        background: #1a1a2e;
+        color: #eee;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+      }
+      h1 {
+        font-size: 48px;
+        color: #e94560;
+        text-shadow: 0 0 20px rgba(233, 69, 96, 0.5);
+      }
+      .subtitle {
+        font-size: 20px;
+        color: #888;
+        margin-top: -20px;
+      }
+      .nav {
+        display: flex;
+        gap: 30px;
+      }
+      .nav a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding: 40px 50px;
+        background: #16213e;
+        border-radius: 16px;
+        text-decoration: none;
+        color: #eee;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+      }
+      .nav a:hover {
+        background: #1a2a4e;
+        border-color: #4cc9f0;
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(76, 201, 240, 0.2);
+      }
+      .nav a .icon {
+        font-size: 64px;
+        width: 80px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .nav a .icon video {
+        width: 80px;
+        height: 80px;
+        object-fit: contain;
+      }
+      .nav a .label {
+        font-size: 24px;
+        font-weight: bold;
+      }
+      .nav a .desc {
+        font-size: 14px;
+        color: #888;
+        text-align: center;
+        max-width: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Demystifies 4D</h1>
+    <p class="subtitle">Interactive 4D geometry visualization</p>
+    <nav class="nav">
+      <a href="axes.html">
+        <span class="icon">✛</span>
+        <span class="label">4D Axes</span>
+        <span class="desc">Visualize the 4 coordinate axes (X, Y, Z, W) and their rotations</span>
+      </a>
+      <a href="tesseract.html">
+        <span class="icon"><video src="./public/8-cell.mp4" autoplay loop muted playsinline></video></span>
+        <span class="label">Tesseract</span>
+        <span class="desc">Explore the 4D hypercube with 16 vertices and 32 edges</span>
+      </a>
+    </nav>
+  </body>
+</html>
